@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Smart Task Analyzer</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>Smart Task Analyzer</h1>
+            <p>Intelligently prioritize your tasks</p>
+        </header>
+
+        <main>
+            <section class="input-section">
+                <h2>Input Tasks</h2>
+                <div class="input-controls">
+                    <button id="loadSampleBtn" class="secondary-btn">Load Sample Data</button>
+                    <button id="clearBtn" class="secondary-btn">Clear</button>
+                </div>
+                <textarea id="taskInput" placeholder='Paste JSON array of tasks here...
+Example:
+[
+    {
+        "title": "Fix login bug",
+        "due_date": "2025-11-30",
+        "estimated_hours": 3,
+        "importance": 8,
+        "dependencies": []
+    }
+]'></textarea>
+                <div class="action-controls">
+                    <select id="sortStrategy">
+                        <option value="smart">Smart Balance (Default)</option>
+                        <option value="fastest">Fastest Wins</option>
+                        <option value="impact">High Impact</option>
+                        <option value="deadline">Deadline Driven</option>
+                    </select>
+                    <button id="analyzeBtn" class="primary-btn">Analyze Tasks</button>
+                </div>
+            </section>
+
+            <section class="output-section">
+                <h2>Prioritized Tasks</h2>
+                <div id="resultsContainer" class="results-container">
+                    <!-- Tasks will be injected here -->
+                    <div class="placeholder-text">Run analysis to see results</div>
+                </div>
+            </section>
+        </main>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
